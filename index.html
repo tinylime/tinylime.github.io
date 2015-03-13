@@ -1,80 +1,23 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="index.css">
-		<title>Project Happy</title>
-	</head>
-	<body>
-		<div id= "header">
-			<div class="container">
-				<div id="logoarea"></div>
-				<div id="navArea">
-					<ul id="nav">
-					<a href="#"><li>Home</li></a>
-					<a href="#"><li>Products</li></a>
-					<a href="#"><li>Services</li></a>
-					<a href="#"><li>Portfolio</li></a>
-					<a href="#"><li>About</li></a>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div id="mainarea">
-			<div class="container page">
-			<article><h3>I Will Wait</h3></br>
-				<p> Well, I came home</br>
-Like a stone</br>
-And I fell heavy into your arms</br>
-These days of dust</br>
-Which we've known</br>
-Will blow away with this new sun </p>
+---
+layout: default
+---
 
-<p>But I'll kneel down,</br>
-Wait for now</br>
-And I'll kneel down,</br>
-Know my ground</p> 
+<div class="home">
 
-<p>And I will wait, I will wait for you</br>
-And I will wait, I will wait for you</p>
+  <h1 class="page-heading">Posts</h1>
 
-<p> O break my step</br>
-And relent</br>
-Well, you forgave and I won't forget</br>
-Know what we've seen</br>
-And him with less</br>
-Now in some way shake the excess</p> 
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-<p>Cause I will wait, I will wait for you</br>
-And I will wait, I will wait for you</br>
-And I will wait, I will wait for you</br>
-And I will wait, I will wait for you </p>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
 
-<p>Now I'll be bold</br>
-As well as strong</br>
-And use my head alongside my heart</br>
-So tame my flesh</br>
-And fix my eyes</br>
-A tethered mind freed from the lies</p> 
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
-<p>And I'll kneel down,</br>
-Wait for now</br>
-I'll kneel down,</br>
-Know my ground </p>
-
-<p>Raise my hands</br>
-Paint my spirit gold</br>
-And bow my head</br>
-Keep my heart slow </p>
-
-<p> 'Cause I will wait, I will wait for you</br>
-And I will wait, I will wait for you</br>
-And I will wait, I will wait for you</br>
-And I will wait, I will wait for you</p></article>
-				
-			</div>
-		</div>
-		<div id="footer">
-			<div class="container">Copyright TinyLime Inc. 2015</div>
-
-		</div>
-	</body>		
+</div>
